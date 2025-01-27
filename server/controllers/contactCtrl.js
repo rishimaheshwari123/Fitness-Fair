@@ -10,7 +10,7 @@ const sendContectSessage = async (req, res) => {
         const serviceBefoureArray = typeof serviceBefoure === "string" ? JSON.parse(serviceBefoure) : serviceBefoure;
 
         await mailSender(
-            "rishimaheshwari040@gmail.com",
+            "fitnessexpoindia@gmail.com",
             "Contact Email",
             contact(name, email, phone, city, age, areaOfIntrestArray, FitenssGoalArray, serviceBefoureArray, intrested, hereAbout)
         );
