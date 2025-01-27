@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "Event", to: "/event" },
     { name: "Sponsorship", to: "/sponsorship" },
     { name: "Contact", to: "/contact" },
+    { name: "Registration Form", to: "/register" },
   ];
 
   return (
