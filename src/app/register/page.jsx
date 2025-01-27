@@ -52,7 +52,8 @@ export default function Contact() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/contact/create",
+        "https://fitness-fair.onrender.com/api/v1/contact/create",
+        // "http://localhost:8080/api/v1/contact/create",
         dataToSubmit
       );
       if (!response?.data?.message) {
