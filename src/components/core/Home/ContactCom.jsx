@@ -105,7 +105,6 @@ const ContactCom = () => {
             onChange={handleChange}
           />
 
-          {/* Date of Birth Field */}
           <input
             type="date"
             className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"

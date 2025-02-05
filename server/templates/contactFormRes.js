@@ -1,4 +1,4 @@
-const eventContactEmail = (name, email, contact, dob, priceCategory, message) => {
+const eventContactEmail = (name, email, contact, message, priceCategory, dob) => {
     return `<!DOCTYPE html>
     <html>
     
