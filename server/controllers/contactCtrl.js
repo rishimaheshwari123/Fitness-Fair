@@ -36,7 +36,8 @@ const contactCtrl = async (req, res) => {
 
     try {
         const emailRes = await mailSender(
-            "adityaeventplanner56@gmail.com",
+            // "fitnessexpoindia@gmail.com",
+            "rishimaheshwari040@gmail.com",
 
             "Your Data send successfully",
             eventContactEmail(name, email, contact, message)

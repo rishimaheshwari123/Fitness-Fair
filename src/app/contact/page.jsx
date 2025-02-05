@@ -40,7 +40,7 @@ const Contact = () => {
     });
 
     try {
-      const response = await axios.post(`${BASE_URL}/contact/create`, formData);
+      const response = await axios.post(`${BASE_URL}/contact/send`, formData);
 
       if (response?.data) {
         Swal.fire({
@@ -67,7 +67,7 @@ const Contact = () => {
     <div className="pt-[87px] w-11/12 mx-auto">
       <iframe
         title="rishi"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.879327357882!2d77.4348028!3d23.1944204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43d95a7ed24b%3A0x5535b9b7c6460352!2sShweta%20Complex!5e1!3m2!1sen!2sin!4v1738666043455!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.328235109365!2d77.431851!3d23.215551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c425113595615%3A0x8bdb8f8c604c7bdf!2s44%2C%20E-4%2C%20Arera%20Colony%2C%20Bhopal%2C%20Madhya%20Pradesh%20462016!5e1!3m2!1sen!2sin!4v1737879416538!5m2!1sen!2sin"
         allowFullScreen
         className="w-full h-[500px]"
         loading="lazy"
@@ -80,23 +80,23 @@ const Contact = () => {
             <span className="px-4 py-3 bg-yellow-500 rounded-md text-xl">
               <FaLocationDot />
             </span>
-            <span>
-              G81 Shewta Complex E-8 Arera colony Trilanga Bhopal
-              Madhya pradesh 462039
-            </span>
+            <span>E-4 /44 Arera Colony, Bhopal - 462003</span>
           </div>
 
           <div className="flex items-center gap-4">
             <span className="px-4 py-3 bg-yellow-500 rounded-md  text-xl">
-              <MdEmail />
+              <FaPhone />
             </span>
-            <span>adityaeventplanner56@gmail.com</span>
+            <span>
+              {" "}
+              <strong>Prashant Shrivastava:</strong> 9407487775
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <span className="px-4 py-3 bg-yellow-500 rounded-md  text-xl">
               <FaPhone />
             </span>
-            <span>+91 7648855478 || +91 9425727907</span>
+            <strong>Ravi Shukla:</strong> 99811 22493
           </div>
         </div>
         <form className="second flex flex-col gap-2" onSubmit={handleSubmit}>
