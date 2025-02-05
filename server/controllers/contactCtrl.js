@@ -1,5 +1,6 @@
 const contact = require("../templates/contact");
 const mailSender = require("../utils/mailSender");
+const { eventContactEmail } = require("../templates/contactFormRes");
 
 const sendContectSessage = async (req, res) => {
     try {
@@ -28,4 +29,34 @@ const sendContectSessage = async (req, res) => {
     }
 }
 
-module.exports = { sendContectSessage };
+
+
+const contactCtrl = async (req, res) => {
+    const { name, email, contact, message } = req.body;
+
+    try {
+        const emailRes = await mailSender(
+            "adityaeventplanner56@gmail.com",
+
+            "Your Data send successfully",
+            eventContactEmail(name, email, contact, message)
+        )
+        if (!email || !name || !contact || !message) {
+            return res.status(500).send({
+                message: "Plase provide all fields",
+                success: false
+            })
+        }
+        res.status(200).send({
+            message: "Email send successfully.Our team will contact you soon!",
+            emailRes,
+            success: true
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            message: "Error in sending email",
+        })
+    }
+}
+module.exports = { sendContectSessage, contactCtrl };
