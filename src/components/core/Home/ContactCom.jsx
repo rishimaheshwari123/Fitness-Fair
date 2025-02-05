@@ -74,13 +74,14 @@ const ContactCom = () => {
 
   return (
     <div className="w-11/12 mx-auto">
-      <div className="grid gap-4 main my-5 items-center">
-        <form className="second flex flex-col gap-2" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-2 gap-2">
+      <div className="grid gap-4 my-5 items-center">
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          {/* Name & Email - Adjusts to single column on small screens */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <input
               type="text"
               placeholder="Enter your name"
-              className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
+              className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -88,7 +89,7 @@ const ContactCom = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
+              className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -98,7 +99,7 @@ const ContactCom = () => {
           <input
             type="text"
             placeholder="Enter your phone"
-            className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
+            className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
             name="contact"
             value={formData.contact}
             onChange={handleChange}
@@ -107,7 +108,7 @@ const ContactCom = () => {
           {/* Date of Birth Field */}
           <input
             type="date"
-            className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
+            className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
             name="dob"
             value={formData.dob}
             onChange={handleChange}
@@ -116,7 +117,7 @@ const ContactCom = () => {
           {/* Price Category Dropdown */}
           <select
             name="priceCategory"
-            className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
+            className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
             value={formData.priceCategory}
             onChange={handleChange}
           >
@@ -151,7 +152,7 @@ const ContactCom = () => {
           </select>
 
           <textarea
-            className="p-3 outline-none h-28 border border-gray-300 bg-transparent"
+            className="p-3 outline-none h-28 border border-gray-300 bg-transparent w-full"
             placeholder="Message"
             name="message"
             value={formData.message}
@@ -160,7 +161,7 @@ const ContactCom = () => {
 
           <button
             type="submit"
-            className="px-5 bg-yellow-500 text-white py-2 rounded-md text-center text-xl mt-5 contact-btn"
+            className="px-5 bg-yellow-500 text-white py-3 rounded-md text-center text-lg w-full"
           >
             Send Message!
           </button>

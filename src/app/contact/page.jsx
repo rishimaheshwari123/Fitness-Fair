@@ -12,6 +12,8 @@ const Contact = () => {
     name: "",
     email: "",
     contact: "",
+    dob: "",
+    priceCategory: "",
     message: "",
   });
   const [isClient, setIsClient] = useState(false);
@@ -49,7 +51,14 @@ const Contact = () => {
           icon: "success",
         });
       }
-      setFormData({ name: "", email: "", contact: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        contact: "",
+        dob: "",
+        priceCategory: "",
+        message: "",
+      });
     } catch (error) {
       console.log(error);
       Swal.fire({
@@ -126,6 +135,50 @@ const Contact = () => {
             value={formData.contact}
             onChange={handleChange}
           />
+          <input
+            type="date"
+            className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
+            name="dob"
+            value={formData.dob}
+            onChange={handleChange}
+          />
+
+          {/* Price Category Dropdown */}
+          <select
+            name="priceCategory"
+            className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
+            value={formData.priceCategory}
+            onChange={handleChange}
+          >
+            <option value="">Select Price Category</option>
+            <option value="Womens fitness Champions Trophy - 1500">
+              Womens fitness Champions Trophy - ₹1500
+            </option>
+            <option value="Womens fitness Award - 1000">
+              Womens fitness Award - ₹1000
+            </option>
+            <option value="Madhya Pradesh fitness Champions Trophy (mens) - 2000">
+              Madhya Pradesh fitness Champions Trophy (mens) - ₹2000
+            </option>
+            <option value="Mens Fitness Award - 1000">
+              Mens Fitness Award - ₹1000
+            </option>
+            <option value="Cycling Competition - 500">
+              Cycling Competition - ₹500
+            </option>
+            <option value="Boxing Competition - 500">
+              Boxing Competition - ₹500
+            </option>
+            <option value="Squad Games Competition - 500">
+              Squad Games Competition - ₹500
+            </option>
+            <option value="Karate Competition - 500">
+              Karate Competition - ₹500
+            </option>
+            <option value="Badminton Competition - 500">
+              Badminton Competition - ₹500
+            </option>
+          </select>
           <textarea
             className="p-3 outline-none h-28 border border-gray-300 bg-transparent"
             placeholder="Message"
