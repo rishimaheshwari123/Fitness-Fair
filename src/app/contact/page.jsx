@@ -12,6 +12,7 @@ const Contact = () => {
     name: "",
     email: "",
     contact: "",
+    id: "",
     dob: "",
     priceCategory: "",
     message: "",
@@ -55,6 +56,7 @@ const Contact = () => {
         name: "",
         email: "",
         contact: "",
+        id: "",
         dob: "",
         priceCategory: "",
         message: "",
@@ -133,6 +135,14 @@ const Contact = () => {
             className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
             name="contact"
             value={formData.contact}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Enter your Id Proof "
+            className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
+            name="contact"
+            value={formData.id}
             onChange={handleChange}
           />
           <div className="relative">
