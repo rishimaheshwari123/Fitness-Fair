@@ -64,7 +64,7 @@ const ContactCom = () => {
   }
   return (
     <div className=" w-11/12 mx-auto">
-      <div className=" grid gap-4 main   my-36 items-center">
+      <div className=" grid gap-4 main  my-5 items-center">
         <form className="second flex flex-col gap-2" onSubmit={handleSubmit}>
           <div className="grid grid-cols-2 gap-2">
             <input
