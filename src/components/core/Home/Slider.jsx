@@ -15,7 +15,7 @@ const Slider = () => {
       ></video>
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 w-[90vw] max-w-7xl gap-6 items-center">
-        <div className="overflow-hidden h-[70vh] rounded-xl shadow-2xl border-4 border-gray-800">
+        <div className="overflow-hidden hidden lg:block h-[70vh] rounded-xl shadow-2xl border-4 border-gray-800">
           <video
             src="/banner1.mp4"
             muted
