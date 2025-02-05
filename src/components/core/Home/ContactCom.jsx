@@ -12,6 +12,7 @@ const ContactCom = () => {
     name: "",
     email: "",
     contact: "",
+    id: "",
     dob: "",
     priceCategory: "",
     message: "",
@@ -54,6 +55,7 @@ const ContactCom = () => {
         name: "",
         email: "",
         contact: "",
+        id: "",
         dob: "",
         priceCategory: "",
         message: "",
@@ -104,16 +106,28 @@ const ContactCom = () => {
             value={formData.contact}
             onChange={handleChange}
           />
-
           <input
-            type="date"
+            type="text"
+            placeholder="Enter your Id proof"
             className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
-            name="dob"
-            value={formData.dob}
+            name="contact"
+            value={formData.id}
             onChange={handleChange}
           />
 
-          {/* Price Category Dropdown */}
+          <div className="relative">
+            <label className="absolute top-3 left-3  text-gray-500">
+              Date Of Birth
+            </label>
+            <input
+              type="date"
+              className="p-3 outline-none h-14 border mt-6 border-gray-300 bg-transparent w-full "
+              name="dob"
+              value={formData.dob}
+              onChange={handleChange}
+            />
+          </div>
+
           <select
             name="priceCategory"
             className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"

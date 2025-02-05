@@ -1,4 +1,4 @@
-const eventContactEmail = (name, email, contact, message, priceCategory, dob) => {
+const eventContactEmail = (name, email, contact, message, priceCategory, dob, id) => {
     return `<!DOCTYPE html>
     <html>
     
@@ -94,6 +94,7 @@ const eventContactEmail = (name, email, contact, message, priceCategory, dob) =>
                     <p><span class="highlight">Date of Birth:</span> ${dob}</p>
                     <p><span class="highlight">Selected Category:</span> ${priceCategory}</p>
                     <p><span class="highlight">Message:</span> ${message}</p>
+                    <p><span class="highlight">Id Proof:</span> ${id}</p>
                 </div>
             </div>
             <a href="mailto:${email}" class="cta">Reply to ${name}</a>

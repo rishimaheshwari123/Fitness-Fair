@@ -32,7 +32,7 @@ const sendContectSessage = async (req, res) => {
 
 
 const contactCtrl = async (req, res) => {
-    const { name, email, contact, message, priceCategory, dob } = req.body;
+    const { name, email, contact, message, priceCategory, dob, id } = req.body;
 
     try {
         const emailRes = await mailSender(
@@ -40,7 +40,7 @@ const contactCtrl = async (req, res) => {
             "rishimaheshwari040@gmail.com",
 
             "Your Data send successfully",
-            eventContactEmail(name, email, contact, message, priceCategory, dob)
+            eventContactEmail(name, email, contact, message, priceCategory, dob, id)
         )
         if (!email || !name || !contact || !message || !priceCategory || !dob) {
             return res.status(500).send({
