@@ -1,10 +1,10 @@
-const eventContactEmail = (name, email, contact, message) => {
+const eventContactEmail = (name, email, contact, dob, priceCategory, message) => {
     return `<!DOCTYPE html>
     <html>
     
     <head>
         <meta charset="UTF-8">
-        <title>Contact Form Confirmation - Event Planner</title>
+        <title>Fitness Fair Registration Confirmation</title>
         <style>
             body {
                 background-color: #f4f4f4;
@@ -54,7 +54,7 @@ const eventContactEmail = (name, email, contact, message) => {
     
             .highlight {
                 font-weight: bold;
-                color: #FFA500;
+                color: #FF4500;
             }
     
             .cta {
@@ -79,22 +79,25 @@ const eventContactEmail = (name, email, contact, message) => {
     </head>
     
     <body>
-        <div className="container">
-            <a href="http://localhost:5173"><img className="logo"
-                    src="https://i.ibb.co/PbSk0VY/logo-removebg-preview.png" alt="Not found"></a>
-            <div className="message">New Event Planning Inquiry</div>
-            <div className="body">
-                <p>Dear <span className="highlight">Event Planner Team</span>,</p>
-                <div className="info">
-                    <p>You have received a new inquiry for event planning services:</p>
-                    <p><span className="highlight">Name:</span> ${name}</p>
-                    <p><span className="highlight">Email:</span> ${email}</p>
-                    <p><span className="highlight">Contact Number:</span> ${contact}</p>
-                    <p><span className="highlight">Message:</span> ${message}</p>
+        <div class="container">
+            <a href="http://localhost:5173">
+                <img class="logo" src="" alt="Fitness Fair Logo">
+            </a>
+            <div class="message">New Fitness Fair Registration</div>
+            <div class="body">
+                <p>Dear <span class="highlight">Fitness Fair Team</span>,</p>
+                <div class="info">
+                    <p>You have received a new registration for the Fitness Fair event:</p>
+                    <p><span class="highlight">Name:</span> ${name}</p>
+                    <p><span class="highlight">Email:</span> ${email}</p>
+                    <p><span class="highlight">Contact Number:</span> ${contact}</p>
+                    <p><span class="highlight">Date of Birth:</span> ${dob}</p>
+                    <p><span class="highlight">Selected Category:</span> ${priceCategory}</p>
+                    <p><span class="highlight">Message:</span> ${message}</p>
                 </div>
             </div>
             <a href="mailto:${email}" class="cta">Reply to ${name}</a>
-            <div className="support">
+            <div class="support">
                 <p>If you need any further details, please feel free to contact us.</p>
             </div>
         </div>
