@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 import axios from "axios";
 import Swal from "sweetalert2";
