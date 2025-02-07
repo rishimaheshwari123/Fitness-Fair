@@ -19,7 +19,7 @@ const Navbar = () => {
     <div className="lg:top-11 left-0 w-full bg-white text-black z-50 py-3 shadow">
       <div className="hidden sm:flex justify-between max-w-7xl mx-auto items-center px-6 py-3  border-gray-200">
         <Link href="/" className="text-xl">
-          Fitness Fair
+          Fitness And Fair Expo
         </Link>
         <div className="flex space-x-6 items-center">
           {links.map((link, index) => (
