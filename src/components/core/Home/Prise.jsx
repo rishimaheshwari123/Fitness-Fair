@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bike from "@/assets/bike1.png";
+import bike from "@/assets/b.png";
 import bike2 from "@/assets/bike2.png";
 
 export default function Prize() {

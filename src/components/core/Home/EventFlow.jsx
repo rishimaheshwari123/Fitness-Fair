@@ -18,7 +18,7 @@ const EventFlow = () => {
         {/* Card for 20 Dec 2025 */}
         <div className="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/2">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            20 Dec 2025
+            8 March 2025
           </h2>
           <ul className="space-y-4">
             <li className="flex items-center space-x-3">
@@ -51,7 +51,7 @@ const EventFlow = () => {
         {/* Card for 21 Dec 2025 */}
         <div className="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/2">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            21 Dec 2025
+            9 March 2025
           </h2>
           <ul className="space-y-4">
             <li className="flex items-center space-x-3">

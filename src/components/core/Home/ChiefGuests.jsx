@@ -11,7 +11,7 @@ export default function ChiefGuests() {
       image: chief1,
     },
     {
-      name: "Sapna Vyas",
+      name: "krishna Shroff",
       role: "Fitness Expert",
       image: chief2,
     },
