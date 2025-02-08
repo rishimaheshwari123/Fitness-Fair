@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import { Bounce } from "react-awesome-reveal";
 
@@ -107,9 +108,17 @@ const SponsorPage = () => {
               <h2 className="text-2xl font-bold text-cyan-400">
                 {sponsor.title}
               </h2>
-              <span className="text-2xl font-semibold text-green-600">
-                {sponsor.amount}
-              </span>
+              <div className="flex flex-col gap-2 p-4 border border-gray-200 rounded-lg shadow-md bg-white">
+      <span className="text-2xl font-semibold text-green-600">
+        {sponsor?.amount}
+      </span>
+      <Link
+        href="/register"
+        className="px-4 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700 transition duration-300 text-center"
+      >
+        Book Now
+      </Link>
+    </div>
             </div>
             <div
               className={`mt-4 ${expandedIndex === index ? "block" : "hidden"}`}

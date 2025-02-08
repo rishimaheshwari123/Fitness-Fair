@@ -53,13 +53,13 @@ export default function About() {
       >
         <div
           className={`relative w-full max-w-lg rounded-lg overflow-hidden shadow-lg transition-transform ${
-            isVideoExpanded ? "w-[90vw] md:w-[80vw] lg:w-[60vw]" : "h-[66vh]"
+            isVideoExpanded ? "w-[90vw] md:w-[80vw] lg:w-[60vw]" : "lg:h-[66vh] h-[50vh]"
           }`}
           onClick={toggleVideoSize}
         >
           <video
             src="/banner2.mp4"
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full lg:h-full object-cover rounded-lg h-[50vh]"
             autoPlay
             loop
             muted

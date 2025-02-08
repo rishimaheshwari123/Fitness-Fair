@@ -8,19 +8,67 @@
   box-sizing: border-box;
 }
 
-@keyframes blink {
-  0%,
-  100% {
+
+html,
+body {
+  overflow-x: hidden;
+  
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: 5px;
+  scrollbar-color: #2b06ff;
+  
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f8e800;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ff0404;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+*:active::-webkit-scrollbar-thumb,
+*:focus::-webkit-scrollbar-thumb,
+*:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+
+
+@keyframes bounceBlink {
+  0%, 100% {
+    transform: translateY(0);
     opacity: 1;
   }
+  25% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
   50% {
-    opacity: 0;
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(10px);
+    opacity: 0.7;
   }
 }
 
-.blink-text {
-  animation: blink 3s infinite;
+.blink-bounce-text {
+  animation: bounceBlink 1s infinite ease-in-out;
 }
+
 .sponsor-card {
   transition: width 0.3s ease-in-out;
   width: 100%;
@@ -29,3 +77,21 @@
 .sponsor-card:hover {
   width: 105%; /* Slightly increase width on hover */
 }
+
+.contactbg {
+  background: url("../assets/contactbg.jpg") no-repeat center center/cover;
+  position: relative;
+  height: 150vh; /* Default for larger screens */
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .contactbg {
+    height: 50vh;
+  }
+}
+
+
+
+
+

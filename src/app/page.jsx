@@ -21,7 +21,7 @@ const page = () => {
       <About />
       <br />
       <CategorySlider />
-      <br />
+      <br /> 
       <EventFlow />
       <Prize />
       <PriseFemail />

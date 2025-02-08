@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   Navigation,
   Pagination,
@@ -19,42 +19,46 @@ import Image from "next/image";
 import s1 from "@/assets/p1.png";
 
 const CategorySlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const slides = [
-    { id: 1, image: s1, altText: "Slide 1" },
-    { id: 2, image: s1, altText: "Slide 2" },
-    { id: 3, image: s1, altText: "Slide 3" },
-    { id: 4, image: s1, altText: "Slide 4" },
-    { id: 5, image: s1, altText: "Slide 4" },
-    { id: 6, image: s1, altText: "Slide 4" },
-    { id: 7, image: s1, altText: "Slide 4" },
+    { id: 1, image: s1, altText: "Slide 1", price: "$100" },
+    { id: 2, image: s1, altText: "Slide 2", price: "$120" },
+    { id: 3, image: s1, altText: "Slide 3", price: "$140" },
+    { id: 4, image: s1, altText: "Slide 4", price: "$160" },
+    { id: 5, image: s1, altText: "Slide 5", price: "$180" },
+    { id: 6, image: s1, altText: "Slide 6", price: "$200" },
   ];
 
   return (
     <div className="relative mx-auto">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
-        spaceBetween={10}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        spaceBetween={20}
         navigation
         pagination={{ clickable: true }}
-        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
-          1280: { slidesPerView: 3 }, // xl: 4 slides
+          1280: { slidesPerView: 3 },
         }}
         className="w-full h-auto"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="w-full h-auto">
+            <div className="relative w-full h-auto group">
+              {/* Image with Dynamic Hover Effect */}
               <Image
                 src={slide.image}
                 alt={slide.altText}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-contain transition-transform duration-500 ease-in-out 
+                           group-hover:scale-110 group-hover:rotate-[var(--rotate)] group-hover:shadow-xl"
+                style={{
+                  "--rotate": Math.random() > 0.5 ? "3deg" : "-3deg",
+                }}
               />
+
+              {/* Price Display with Animation */}
+              
             </div>
           </SwiperSlide>
         ))}

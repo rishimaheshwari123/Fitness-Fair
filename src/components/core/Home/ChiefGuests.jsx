@@ -26,22 +26,22 @@ export default function ChiefGuests() {
         {guests.map((guest, index) => (
           <div key={index} className="text-center">
             {/* Image Container */}
-            <div className="relative w-full h-[95vh] overflow-hidden group">
+            <div className="relative w-full lg:h-[95vh] h-[50vh] overflow-hidden group">
               {/* First Image (Default) */}
               <Image
                 src={guest.images[0]}
                 alt={guest.name}
-                width={500}
-                height={400}
-                className="w-full h-full object-fit absolute transition-opacity duration-500 group-hover:opacity-0"
+                width={800}
+                height={1000}
+                className="w-full h-full object-cover object-top absolute transition-opacity duration-500 group-hover:opacity-0"
               />
               {/* Second Image (Shows on Hover) */}
               <Image
                 src={guest.images[1]}
                 alt={guest.name}
-                width={500}
-                height={400}
-                className="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                width={800}
+                height={1200}
+                className="w-full h-full object-cover object-top absolute opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               />
             </div>
             {/* Text Section */}

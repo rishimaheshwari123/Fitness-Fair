@@ -1,19 +1,21 @@
 const contact = require("../templates/contact");
 const mailSender = require("../utils/mailSender");
 const { eventContactEmail } = require("../templates/contactFormRes");
+const contactModel = require("../modle/contactModel")
+const registerModel = require("../modle/registerModel")
 
 const sendContectSessage = async (req, res) => {
     try {
-        const { name, email, phone, city, age, areaOfIntrest, FitenssGoal, serviceBefoure, intrested, hereAbout } = req.body;
+        const { name, email, phone, city, age, occupation } = req.body;
 
-        const areaOfIntrestArray = typeof areaOfIntrest === "string" ? JSON.parse(areaOfIntrest) : areaOfIntrest;
-        const FitenssGoalArray = typeof FitenssGoal === "string" ? JSON.parse(FitenssGoal) : FitenssGoal;
-        const serviceBefoureArray = typeof serviceBefoure === "string" ? JSON.parse(serviceBefoure) : serviceBefoure;
+        await registerModel.create({name, email, phone, city, age, occupation})
 
         await mailSender(
-            "fitnessexpoindia@gmail.com",
+            // "fitnessexpoindia@gmail.com",
+            "rishimaheshwari040@gmail.com",
+
             "Contact Email",
-            contact(name, email, phone, city, age, areaOfIntrestArray, FitenssGoalArray, serviceBefoureArray, intrested, hereAbout)
+            contact(name, email, phone, city, age, occupation )
         );
 
         return res.status(200).json({
@@ -32,17 +34,19 @@ const sendContectSessage = async (req, res) => {
 
 
 const contactCtrl = async (req, res) => {
-    const { name, email, contact, message, priceCategory, dob, id } = req.body;
+    const { name, email, contact, dob, priceCategory, price, size } = req.body;
 
     try {
+        await contactModel.create({name, email, contact, dob, priceCategory, price, size})
+
         const emailRes = await mailSender(
             // "fitnessexpoindia@gmail.com",
             "rishimaheshwari040@gmail.com",
 
             "Your Data send successfully",
-            eventContactEmail(name, email, contact, message, priceCategory, dob, id)
+            eventContactEmail(name, email, contact, dob, priceCategory, price, size)
         )
-        if (!email || !name || !contact || !message || !priceCategory || !dob) {
+        if (!email || !name || !contact || !contact || !priceCategory || !size) {
             return res.status(500).send({
                 message: "Plase provide all fields",
                 success: false

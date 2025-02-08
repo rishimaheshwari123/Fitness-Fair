@@ -1,4 +1,4 @@
-const eventContactEmail = (name, email, contact, message, priceCategory, dob, id) => {
+const eventContactEmail = (name, email, contact, dob, priceCategory, price, size) => {
     return `<!DOCTYPE html>
     <html>
     
@@ -80,8 +80,8 @@ const eventContactEmail = (name, email, contact, message, priceCategory, dob, id
     
     <body>
         <div class="container">
-            <a href="http://localhost:5173">
-                <img class="logo" src="" alt="Fitness Fair Logo">
+            <a href="http://fitnessexpo.in">
+                <img class="logo" src="https://i.ibb.co/SwvtByLP/logo.png" alt="Fitness Fair Logo">
             </a>
             <div class="message">New Fitness Fair Registration</div>
             <div class="body">
@@ -93,8 +93,8 @@ const eventContactEmail = (name, email, contact, message, priceCategory, dob, id
                     <p><span class="highlight">Contact Number:</span> ${contact}</p>
                     <p><span class="highlight">Date of Birth:</span> ${dob}</p>
                     <p><span class="highlight">Selected Category:</span> ${priceCategory}</p>
-                    <p><span class="highlight">Message:</span> ${message}</p>
-                    <p><span class="highlight">Id Proof:</span> ${id}</p>
+                    <p><span class="highlight">Price :</span> ${price}</p>
+                    <p><span class="highlight">T-shirt size:</span> ${size}</p>
                 </div>
             </div>
             <a href="mailto:${email}" class="cta">Reply to ${name}</a>

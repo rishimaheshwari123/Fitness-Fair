@@ -1,4 +1,4 @@
-const contact = (name, email, phone, city, age, areaOfIntrestArray, FitenssGoalArray, serviceBefoureArray, intrested, hereAbout) => {
+const contact = (name, email, phone, city, age, occupation) => {
 	return `<!DOCTYPE html>
 	<html>
 	
@@ -66,11 +66,8 @@ const contact = (name, email, phone, city, age, areaOfIntrestArray, FitenssGoalA
 					<p><strong>Phone:</strong> ${phone}</p>
 					<p><strong>City:</strong> ${city}</p>
 					<p><strong>Age:</strong> ${age}</p>
-					<p><strong>Interest Areas:</strong> ${Array.isArray(areaOfIntrestArray) ? areaOfIntrestArray.join(', ') : areaOfIntrestArray}</p>
-					<p><strong>Fitness Goals:</strong> ${Array.isArray(FitenssGoalArray) ? FitenssGoalArray.join(', ') : FitenssGoalArray}</p>
-					<p><strong>Have You Used These Services Before?</strong> ${Array.isArray(serviceBefoureArray) ? serviceBefoureArray.join(', ') : serviceBefoureArray}</p>
-					<p><strong>Interested in Sponsorship for:</strong> ${intrested}</p>
-					<p><strong>How Did You Hear About Us?:</strong> ${hereAbout}</p>
+					<p><strong>Query Related to </strong> ${occupation}</p>
+					
 				</div>
 				
 				<p>Feel free to follow up with the user to explore sponsorship opportunities further.</p>

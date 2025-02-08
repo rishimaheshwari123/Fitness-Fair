@@ -1,35 +1,47 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaPhone, FaCalendarAlt } from "react-icons/fa";
+import { MdCategory } from "react-icons/md";
 import axios from "axios";
 import Swal from "sweetalert2";
-const BASE_URL = "https://fitness-fair.onrender.com/api/v1";
+const BASE_URL = "https://api.fitnessexpo.in/api/v1";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     contact: "",
-    id: "",
     dob: "",
     priceCategory: "",
+    price: "",
+    size: "",
     message: "",
   });
+
+
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
-
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-    // console.log(formData);
-  };
+    const { name, value } = e.target;
 
+    if (name === "priceCategory") {
+      const [category, priceValue] = value.split(" - ");
+      setFormData({
+        ...formData,
+        priceCategory: category,
+        price: priceValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     Swal.fire({
@@ -74,17 +86,10 @@ const Contact = () => {
     return null;
   }
   return (
-    <div className="pt-[87px] w-11/12 mx-auto">
-      <iframe
-        title="rishi"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.328235109365!2d77.431851!3d23.215551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c425113595615%3A0x8bdb8f8c604c7bdf!2s44%2C%20E-4%2C%20Arera%20Colony%2C%20Bhopal%2C%20Madhya%20Pradesh%20462016!5e1!3m2!1sen!2sin!4v1737879416538!5m2!1sen!2sin"
-        allowFullScreen
-        className="w-full h-[500px]"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+    <div className=" w-11/12 mx-auto">
 
-      <div className=" grid gap-4 main lg:grid lg:grid-cols-2 my-36 items-center">
+
+      <div className=" grid gap-4 main lg:grid lg:grid-cols-2 items-center">
         <div className="first flex flex-col gap-8">
           <div className="flex items-center gap-4">
             <span className="px-4 py-3 bg-yellow-500 rounded-md text-xl">
@@ -99,114 +104,130 @@ const Contact = () => {
             </span>
             <span>
               {" "}
-              <strong>Prashant Shrivastava:</strong> 9407487775
+             9407487775
             </span>
           </div>
           <div className="flex items-center gap-4">
             <span className="px-4 py-3 bg-yellow-500 rounded-md  text-xl">
               <FaPhone />
             </span>
-            <strong>Ravi Shukla:</strong> 99811 22493
+        99811 22493
           </div>
         </div>
-        <form className="second flex flex-col gap-2" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-2 gap-2">
-            <input
-              type="text"
-              placeholder="Enter your name"
-              className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
+       <div className="w-full max-w-lg mx-auto p-6 bg-white shadow-xl rounded-lg min-h-full">
+            <h2 className="text-center text-2xl font-bold text-red-500 mb-4">
+              Contact Form
+            </h2>
+      
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              {/* Name */}
+              <div className="relative">
+                <FaUser className="absolute top-4 left-3 text-red-500" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  className="pl-10 p-3 outline-none h-12 border border-gray-300 rounded-lg w-full focus:border-red-500 focus:shadow-lg"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </div>
+      
+              {/* Email */}
+              <div className="relative">
+                <FaEnvelope className="absolute top-4 left-3 text-red-500" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  className="pl-10 p-3 outline-none h-12 border border-gray-300 rounded-lg w-full focus:border-red-500 focus:shadow-lg"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+      
+              {/* Phone */}
+              <div className="relative">
+                <FaPhone className="absolute top-4 left-3 text-red-500" />
+                <input
+                  type="text"
+                  name="contact"
+                  placeholder="Enter your phone"
+                  className="pl-10 p-3 outline-none h-12 border border-gray-300 rounded-lg w-full focus:border-red-500 focus:shadow-lg"
+                  value={formData.contact}
+                  onChange={handleChange}
+                />
+              </div>
+      
+              {/* Date of Birth */}
+              <div className="relative">
+                <FaCalendarAlt className="absolute top-4 left-3 text-red-500" />
+                <input
+                  type="date"
+                  name="dob"
+                  className="pl-10 p-3 outline-none h-12 border border-gray-300 rounded-lg w-full focus:border-red-500 focus:shadow-lg"
+                  value={formData.dob}
+                  onChange={handleChange}
+                />
+              </div>
+      
+              {/* Price Category & T-Shirt Size (Same Line) */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative">
+                  <MdCategory className="absolute top-4 left-3 text-red-500" />
+                  <select
+                    name="priceCategory"
+                    className="pl-10 p-3 outline-none h-12 border border-gray-300 rounded-lg w-full focus:border-red-500 focus:shadow-lg"
+                    value={`${formData.priceCategory} - ${formData.price}`}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select Price</option>
+                    <option value="Womens fitness Champions Trophy - 1500">Womens fitness Champions Trophy - ₹1500</option>
+                    <option value="Womens fitness Award - 1000">Womens fitness Award - ₹1000</option>
+                    <option value="Madhya Pradesh fitness Champions Trophy (mens) - 2000">
+                      Madhya Pradesh fitness Champions Trophy (mens) - ₹2000
+                    </option>
+                    <option value="Mens Fitness Award - 1000">Mens Fitness Award - ₹1000</option>
+                    <option value="Cycling Competition - 500">Cycling Competition - ₹500</option>
+                  </select>
+      
+                  {formData.price && (
+                  <span className="block mt-2 text-red-600 font-semibold">
+                    Price: ₹{formData.price}
+                  </span>
+                )}
+                </div>
+      
+                {/* T-Shirt Size */}
+                <div>
+                  <select
+                    name="size"
+                    className="p-3 outline-none h-12 border border-gray-300 rounded-lg w-full focus:border-red-500 focus:shadow-lg"
+                    value={formData.size}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select Size</option>
+                    <option value="S">S (Small)</option>
+                    <option value="M">M (Medium)</option>
+                    <option value="L">L (Large)</option>
+                    <option value="XL">XL (Extra Large)</option>
+                    <option value="XXL">XXL (Double Extra Large)</option>
+                    <option value="XXXL">XXXL (Triple Extra Large)</option>
+                  </select>
+                </div>
+              </div>
+      
+              
+      
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="px-5 py-3 bg-red-500 text-white rounded-lg w-full text-lg font-semibold hover:bg-red-600 shadow-lg transition-all"
+              >
+                Send Message!
+              </button>
+            </form>
           </div>
-          <input
-            type="text"
-            placeholder="Enter your phone "
-            className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
-            name="contact"
-            value={formData.contact}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Enter your Id Proof "
-            className="p-3 outline-none h-14 border border-gray-300 bg-transparent"
-            name="contact"
-            value={formData.id}
-            onChange={handleChange}
-          />
-          <div className="relative">
-            <label className="absolute top-3 left-3  text-gray-500">
-              Date Of Birth
-            </label>
-            <input
-              type="date"
-              className="p-3 outline-none h-14 border mt-6 border-gray-300 bg-transparent w-full "
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-            />
-          </div>
-          {/* Price Category Dropdown */}
-          <select
-            name="priceCategory"
-            className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
-            value={formData.priceCategory}
-            onChange={handleChange}
-          >
-            <option value="">Select Price Category</option>
-            <option value="Womens fitness Champions Trophy - 1500">
-              Womens fitness Champions Trophy - ₹1500
-            </option>
-            <option value="Womens fitness Award - 1000">
-              Womens fitness Award - ₹1000
-            </option>
-            <option value="Madhya Pradesh fitness Champions Trophy (mens) - 2000">
-              Madhya Pradesh fitness Champions Trophy (mens) - ₹2000
-            </option>
-            <option value="Mens Fitness Award - 1000">
-              Mens Fitness Award - ₹1000
-            </option>
-            <option value="Cycling Competition - 500">
-              Cycling Competition - ₹500
-            </option>
-            <option value="Boxing Competition - 500">
-              Boxing Competition - ₹500
-            </option>
-            <option value="Squad Games Competition - 500">
-              Squad Games Competition - ₹500
-            </option>
-            <option value="Karate Competition - 500">
-              Karate Competition - ₹500
-            </option>
-            <option value="Badminton Competition - 500">
-              Badminton Competition - ₹500
-            </option>
-          </select>
-          <textarea
-            className="p-3 outline-none h-28 border border-gray-300 bg-transparent"
-            placeholder="Message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-          ></textarea>
-          <button
-            type="submit"
-            className=" px-5 bg-yellow-500 text-white py-2 rounded-md text-center text-xl  mt-5 contact-btn
-          "
-          >
-            Send Message!
-          </button>
-        </form>
       </div>
     </div>
   );

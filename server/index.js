@@ -4,12 +4,13 @@ const cookieParser = require("cookie-parser")
 const cors = require("cors")
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
+const connectDB = require("./utils/db");
 
 
 dotenv.config();
 
 const PORT = process.env.PORT || 8080
-
+connectDB();
 
 
 app.use(express.json())
