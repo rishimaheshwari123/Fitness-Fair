@@ -5,9 +5,9 @@ import ContactCom from "./ContactCom";
 
 const Slider = () => {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full flex flex-col lg:block">
       <Image src={banner} alt="not found" className="w-full h-auto" />
-      <div className="absolute top-1/2 right-4 transform -translate-y-1/2 w-full max-w-xs p-4 bg-white shadow-lg rounded-lg lg:max-w-sm">
+      <div className="w-full  lg:max-w-md p-4 bg-white shadow-lg rounded-lg mt-4 lg:mt-0 lg:absolute lg:top-1/2 lg:right-4 lg:-translate-y-1/2">
         <ContactCom />
       </div>
     </div>

@@ -75,7 +75,7 @@ const ContactCom = () => {
   }
 
   return (
-    <div className="w-[20vw] mx-auto">
+    <div className=" w-[90vw] md:w-[20vw] mx-auto">
       <p className="text-center font-bold text-cyan-400">Registration Form</p>
       <div className="grid gap-4 my-5 items-center">
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
