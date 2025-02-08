@@ -34,7 +34,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        <div className=" mt-[120px]">
+       
+        <div className=" mt-[170px] lg:mt-[120px]">
         {children}
         <Footer />
         </div>

@@ -58,7 +58,7 @@ const Navbar = () => {
         </Fade>
 
         {/* Mobile Navbar */}
-        <div className="sm:hidden flex justify-between items-center px-6 py-4 border-b border-gray-200">
+        <div className="sm:hidden bg-white flex justify-between items-center px-6 py-4 border-b border-gray-200">
           <Link href="/" className="text-xl">
             <Image
               src={logo}

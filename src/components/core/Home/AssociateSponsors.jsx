@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 
 const sponsors = [
-  { icon: <FaBroadcastTower />, label: "Telecommunications", color: "text-blue-500" },
+  { icon: <FaBroadcastTower />, label: "communications", color: "text-blue-500" },
   { icon: <FaIndustry />, label: "Telecoms Operators", color: "text-green-500" },
   { icon: <FaGem />, label: "Jewellers", color: "text-yellow-500" },
   { icon: <FaUsers />, label: "Media House", color: "text-purple-500" },
