@@ -11,8 +11,8 @@ const sendContectSessage = async (req, res) => {
         await registerModel.create({name, email, phone, city, age, occupation})
 
         await mailSender(
-            // "fitnessexpoindia@gmail.com",
-            "rishimaheshwari040@gmail.com",
+            "fitnessexpoindia@gmail.com",
+            // "rishimaheshwari040@gmail.com",
 
             "Contact Email",
             contact(name, email, phone, city, age, occupation )
@@ -40,8 +40,8 @@ const contactCtrl = async (req, res) => {
         await contactModel.create({name, email, contact, dob, priceCategory, price, size})
 
         const emailRes = await mailSender(
-            // "fitnessexpoindia@gmail.com",
-            "rishimaheshwari040@gmail.com",
+            "fitnessexpoindia@gmail.com",
+            // "rishimaheshwari040@gmail.com",
 
             "Your Data send successfully",
             eventContactEmail(name, email, contact, dob, priceCategory, price, size)
