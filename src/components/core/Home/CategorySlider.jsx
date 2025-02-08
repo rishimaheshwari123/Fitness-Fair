@@ -27,8 +27,8 @@ const CategorySlider = () => {
     { id: 2, image: s2, altText: "Slide 2", price: "$120" },
     { id: 3, image: s3, altText: "Slide 3", price: "$140" },
     { id: 4, image: s4, altText: "Slide 4", price: "$160" },
-    { id: 5, image: s1, altText: "Slide 5", price: "$180" },
-    { id: 6, image: s1, altText: "Slide 6", price: "$200" },
+    // { id: 5, image: s1, altText: "Slide 5", price: "$180" },
+    // { id: 6, image: s1, altText: "Slide 6", price: "$200" },
   ];
 
   return (
