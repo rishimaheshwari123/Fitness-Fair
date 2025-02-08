@@ -1,5 +1,6 @@
 import About from "@/components/core/Home/About";
 import AssociateSponsors from "@/components/core/Home/AssociateSponsors";
+import CategorySlider from "@/components/core/Home/CategorySlider";
 import ChiefGuests from "@/components/core/Home/ChiefGuests";
 import EventFlow from "@/components/core/Home/EventFlow";
 import FitnessBrand from "@/components/core/Home/FitnessBrand";
@@ -18,21 +19,15 @@ const page = () => {
     <div>
       <Slider />
       <About />
-      <div className="w-full h-[400px] relative">
-        <Image
-          src="/image.png"
-          alt="not found"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <br />
+      <CategorySlider />
       <br />
       <EventFlow />
       <Prize />
       <PriseFemail />
       <Swiper />
       <AssociateSponsors />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <ChiefGuests />
       <GallerySection />
       <FitnessBrand />

@@ -7,3 +7,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink-text {
+  animation: blink 3s infinite;
+}
+.sponsor-card {
+  transition: width 0.3s ease-in-out;
+  width: 100%;
+}
+
+.sponsor-card:hover {
+  width: 105%; /* Slightly increase width on hover */
+}

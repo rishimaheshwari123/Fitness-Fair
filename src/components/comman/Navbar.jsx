@@ -1,8 +1,9 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import logo from "@/assets/logo.png";
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -11,15 +12,16 @@ const Navbar = () => {
     { name: "About", to: "/about" },
     { name: "Event", to: "/event" },
     { name: "Sponsorship", to: "/sponsorship" },
+    { name: "Stall Booking", to: "/stall" },
     { name: "Contact", to: "/contact" },
     { name: "Registration Form", to: "/register" },
   ];
 
   return (
-    <div className="lg:top-11 left-0 w-full bg-white text-black z-50 py-3 shadow">
-      <div className="hidden sm:flex justify-between max-w-7xl mx-auto items-center px-6 py-3  border-gray-200">
+    <div className="lg:top-11 left-0 w-full bg-white text-black z-50 py-1  shadow">
+      <div className="hidden sm:flex justify-between max-w-7xl mx-auto items-center px-6  py-1 border-gray-200">
         <Link href="/" className="text-xl">
-          Fitness And Fair Expo
+          <Image src={logo} className="w-52" alt="not found" />
         </Link>
         <div className="flex space-x-6 items-center">
           {links.map((link, index) => (

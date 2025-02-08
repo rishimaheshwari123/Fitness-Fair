@@ -75,7 +75,8 @@ const ContactCom = () => {
   }
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="w-[20vw] mx-auto">
+      <p className="text-center font-bold text-cyan-400">Registration Form</p>
       <div className="grid gap-4 my-5 items-center">
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           {/* Name & Email - Adjusts to single column on small screens */}
@@ -106,14 +107,14 @@ const ContactCom = () => {
             value={formData.contact}
             onChange={handleChange}
           />
-          <input
+          {/* <input
             type="text"
             placeholder="Enter your Id proof"
             className="p-3 outline-none h-14 border border-gray-300 bg-transparent w-full"
             name="contact"
             value={formData.id}
             onChange={handleChange}
-          />
+          /> */}
 
           <div className="relative">
             <label className="absolute top-3 left-3  text-gray-500">
@@ -163,14 +164,6 @@ const ContactCom = () => {
               Badminton Competition - ₹500
             </option>
           </select>
-
-          <textarea
-            className="p-3 outline-none h-28 border border-gray-300 bg-transparent w-full"
-            placeholder="Message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-          ></textarea>
 
           <button
             type="submit"

@@ -10,59 +10,70 @@ export default function About() {
   };
 
   return (
-    <div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-8 p-8 max-w-7xl mx-auto relative">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 lg:p-12 max-w-7xl mx-auto relative">
+      {/* Text Section */}
       <div
-        className={`text-center lg:text-left ${isVideoExpanded ? "blur" : ""}`}
+        className={`transition-opacity duration-300 ${
+          isVideoExpanded ? "opacity-30" : "opacity-100"
+        }`}
       >
-        <p className="text-4xl font-bold mb-4">
-          Being Fit is not a fashion or trend… it’s a Way of Life
+        <p className="text-2xl font-bold uppercase text-red-600 mb-4 text-center lg:text-left">
+          Being Fit is not a fashion or trend.
+          <br />
+          <span className="text-cyan-500">It’s a Way of Life</span>
         </p>
 
-        <p className="text-lg mb-4">
-          Fitness Fair 2025 – BIGGER Than Ever. The Biggest Fitness & Wellness
-          Festival of Central India is set to take Bhopal by storm… The stage is
-          set. FITNESS FAIR 2025 is ready to blow you away. The game just got
-          bigger and better.
+        <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+          Fitness & Lifestyle Expo 2025, the biggest fitness & wellness festival
+          of Central India, is set to take Bhopal by storm. The stage is set,
+          and this grand event is ready to amaze you!
         </p>
-        <p className="text-lg mb-4">
-          The total retail market for fitness is estimated to cross Rs. 20,000
-          Cr. Don't miss it!
+
+        <p className="text-gray-600 leading-relaxed">
+          The event aims to inspire people in fitness and wellness, raise
+          awareness about health, and share cutting-edge technologies and
+          solutions. It will feature renowned experts, athletes, fitness brands,
+          and young enthusiasts from across the country.
         </p>
-        <p className="text-lg">
-          Madhya Pradesh Bodybuilding Competition (MPBC) & Female Fitness Award
-          Show is an extraordinary competition. It’s a fiesta of Bodybuilding &
-          Fitness.
-        </p>
+
+        <ul className="mt-4 space-y-2 text-gray-700">
+          <li>✔️ Madhya Pradesh Bodybuilding Championship (MPBCT)</li>
+          <li>✔️ Female Fitness Award Show</li>
+          <li>✔️ Fitness & Wellness Seminars</li>
+          <li>✔️ Exhibition & Product Launches</li>
+          <li>✔️ Interactive Fitness Challenges & Live Demonstrations</li>
+        </ul>
       </div>
 
+      {/* Video Section */}
       <div
-        className={`flex justify-center items-center cursor-pointer ${
+        className={`flex justify-center items-center cursor-pointer transition-all duration-500 ${
           isVideoExpanded ? "fixed inset-0 bg-black bg-opacity-50 z-50" : ""
         }`}
       >
         <div
-          className={`relative w-full max-w-lg ${
-            isVideoExpanded ? "w-[80vw] " : "h-[66vh]"
+          className={`relative w-full max-w-lg rounded-lg overflow-hidden shadow-lg transition-transform ${
+            isVideoExpanded ? "w-[90vw] md:w-[80vw] lg:w-[60vw]" : "h-[66vh]"
           }`}
           onClick={toggleVideoSize}
         >
           <video
             src="/banner2.mp4"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-lg"
             autoPlay
             loop
             muted
           ></video>
-          <div className="absolute bottom-4 right-4 text-white text-3xl cursor-pointer">
-            <FaPlayCircle />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+            <FaPlayCircle className="text-white text-5xl opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         </div>
       </div>
 
-      {/* Background Blur Effect */}
+      {/* Background Blur Overlay */}
       {isVideoExpanded && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 backdrop-blur-sm"
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"
           onClick={toggleVideoSize}
         ></div>
       )}
