@@ -38,7 +38,9 @@ const Navbar = () => {
 
       {/* Hamburger Menu for Small Devices */}
       <div className="sm:hidden flex justify-between items-center px-6 py-4 border-b border-gray-200">
-        <Link href="/">Fitness Fair</Link>
+        <Link href="/" className="text-xl">
+          <Image src={logo} className="w-52" alt="not found" />
+        </Link>{" "}
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
           {isSidebarOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
