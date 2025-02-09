@@ -1,4 +1,4 @@
-const contact = (name, email, phone, city, age, occupation) => {
+const contact = (name, email, phone, city, occupation, stallCategory) => {
 	return `<!DOCTYPE html>
 	<html>
 	
@@ -65,9 +65,8 @@ const contact = (name, email, phone, city, age, occupation) => {
 					<p><strong>Email:</strong> ${email}</p>
 					<p><strong>Phone:</strong> ${phone}</p>
 					<p><strong>City:</strong> ${city}</p>
-					<p><strong>Age:</strong> ${age}</p>
-					<p><strong>Query Related to </strong> ${occupation}</p>
-					
+					<p><strong>Query Related to:</strong> ${occupation}</p>
+					${stallCategory ? `<p><strong>Stall Category:</strong> ${stallCategory}</p>` : ''}
 				</div>
 				
 				<p>Feel free to follow up with the user to explore sponsorship opportunities further.</p>

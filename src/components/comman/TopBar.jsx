@@ -22,15 +22,32 @@ const TopHeader = () => {
               <Zoom triggerOnce delay={100}>
                 <div className="hidden md:flex items-center space-x-2">
                   <FiPhone className="text-xl text-green-600" />
-                  <a href="tel:919981122493" className="font-semibold hover:underline">
+                  <a
+                    href="tel:919981122493"
+                    className="font-semibold hover:underline"
+                  >
                     +91 9981122493
+                  </a>
+                </div>
+              </Zoom>
+              <Zoom triggerOnce delay={100}>
+                <div className="hidden md:flex items-center space-x-2">
+                  <FiPhone className="text-xl text-green-600" />
+                  <a
+                    href="tel:918989643314"
+                    className="font-semibold hover:underline"
+                  >
+                    +91 8989643314
                   </a>
                 </div>
               </Zoom>
               <Zoom triggerOnce delay={200}>
                 <div className="flex items-center space-x-2">
                   <FiMail className="text-xl text-blue-600" />
-                  <a href="mailto:fitnessexpoindia@gmail.com" className="font-semibold hover:underline">
+                  <a
+                    href="mailto:fitnessexpoindia@gmail.com"
+                    className="font-semibold hover:underline"
+                  >
                     fitnessexpoindia@gmail.com
                   </a>
                 </div>
@@ -38,13 +55,44 @@ const TopHeader = () => {
             </div>
 
             <div className="flex space-x-4">
-              {[{ Icon: FaFacebook, color: "text-blue-600" }, { Icon: FaInstagram, color: "text-pink-600" }, { Icon: FaYoutube, color: "text-red-600" }, { Icon: SiMaplibre, color: "text-green-600" }].map(({ Icon, color }, index) => (
-                <Zoom key={index} triggerOnce delay={index * 100}>
-                  <Link href="#" aria-label="Social Link">
-                    <Icon size={22} className={`${color} hover:scale-125 transition-transform duration-300`} />
-                  </Link>
-                </Zoom>
-              ))}
+              <Zoom triggerOnce>
+                <Link
+                  href="https://www.facebook.com/share/p/1EUJERQCPa/?mibextid=oFDknk"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook
+                    size={22}
+                    className="text-blue-600 hover:scale-125 transition-transform duration-300"
+                  />
+                </Link>
+              </Zoom>
+              <Zoom triggerOnce delay={100}>
+                <Link
+                  href="https://www.instagram.com/fitnessexpoindia?igsh=MTZ4YmxsOWd0YXJ3MQ=="
+                  aria-label="Instagram"
+                >
+                  <FaInstagram
+                    size={22}
+                    className="text-pink-600 hover:scale-125 transition-transform duration-300"
+                  />
+                </Link>
+              </Zoom>
+              <Zoom triggerOnce delay={200}>
+                <Link href="#" aria-label="YouTube">
+                  <FaYoutube
+                    size={22}
+                    className="text-red-600 hover:scale-125 transition-transform duration-300"
+                  />
+                </Link>
+              </Zoom>
+              <Zoom triggerOnce delay={300}>
+                <Link href="#" aria-label="Map">
+                  <SiMaplibre
+                    size={22}
+                    className="text-green-600 hover:scale-125 transition-transform duration-300"
+                  />
+                </Link>
+              </Zoom>
             </div>
           </div>
         </div>
@@ -59,7 +107,10 @@ const TopHeader = () => {
           </div>
           <div className="flex items-center space-x-2">
             <FiMail className="text-xl text-blue-600" />
-            <a href="mailto:fitnessexpoindia@gmail.com" className="font-semibold hover:underline">
+            <a
+              href="mailto:fitnessexpoindia@gmail.com"
+              className="font-semibold hover:underline"
+            >
               Email Us
             </a>
           </div>
@@ -68,16 +119,61 @@ const TopHeader = () => {
         <div className="flex justify-between mt-3">
           <div className="flex items-center space-x-2">
             <FiPhone className="text-xl text-green-600" />
-            <a href="tel:919981122493" className="font-semibold hover:underline">9981122493</a>
+            <a
+              href="tel:919981122493"
+              className="font-semibold hover:underline"
+            >
+              9981122493
+            </a>
+          </div>
+          <div className="flex items-center space-x-2">
+            <FiPhone className="text-xl text-green-600" />
+            <a
+              href="tel:918989643314"
+              className="font-semibold hover:underline"
+            >
+              8989643314
+            </a>
           </div>
           <div className="flex space-x-4">
-            {[FaFacebook, FaInstagram, FaYoutube, SiMaplibre].map((Icon, index) => (
-              <Zoom key={index} triggerOnce delay={index * 100}>
-                <Link href="#" aria-label="Social Link">
-                  <Icon size={22} className="hover:scale-125 transition-transform duration-300" />
-                </Link>
-              </Zoom>
-            ))}
+            <Zoom triggerOnce>
+              <Link
+                href="https://www.facebook.com/share/p/1EUJERQCPa/?mibextid=oFDknk"
+                aria-label="Facebook"
+              >
+                <FaFacebook
+                  size={22}
+                  className="text-blue-600 hover:scale-125 transition-transform duration-300"
+                />
+              </Link>
+            </Zoom>
+            <Zoom triggerOnce delay={100}>
+              <Link
+                href="https://www.instagram.com/fitnessexpoindia?igsh=MTZ4YmxsOWd0YXJ3MQ=="
+                aria-label="Instagram"
+              >
+                <FaInstagram
+                  size={22}
+                  className="text-pink-600 hover:scale-125 transition-transform duration-300"
+                />
+              </Link>
+            </Zoom>
+            <Zoom triggerOnce delay={200}>
+              <Link href="#" aria-label="YouTube">
+                <FaYoutube
+                  size={22}
+                  className="text-red-600 hover:scale-125 transition-transform duration-300"
+                />
+              </Link>
+            </Zoom>
+            <Zoom triggerOnce delay={300}>
+              <Link href="#" aria-label="Map">
+                <SiMaplibre
+                  size={22}
+                  className="text-green-600 hover:scale-125 transition-transform duration-300"
+                />
+              </Link>
+            </Zoom>
           </div>
         </div>
       </div>

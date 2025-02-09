@@ -17,7 +17,11 @@ const Footer = () => {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
           {/* Logo Section */}
           <div className="flex flex-col items-start">
-            <Image src={logo} alt="Event Logo" className="h-16 w-auto mb-4 filter drop-shadow-lg" />
+            <Image
+              src={logo}
+              alt="Event Logo"
+              className="h-16 w-auto mb-4 filter drop-shadow-lg"
+            />
             <p className="text-gray-400 max-w-xs">
               Join the ultimate fitness experience! 🏋️‍♂️🔥
             </p>
@@ -38,8 +42,10 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-gray-200 mb-4">
               Contact
             </h3>
-            <p className="text-gray-400">📍 E-4 /44 Arera Colony, Bhopal - 462003</p>
-            <p className="text-gray-400">📞 +91 9407487775, +91 9981122493            </p>
+            <p className="text-gray-400">
+              📍 E-4 /44 Arera Colony, Bhopal - 462003
+            </p>
+            <p className="text-gray-400">📞 +91 9407487775, +91 9981122493 </p>
             <p className="text-gray-400">📧 fitnessexpoindia@gmail.com</p>
           </div>
 
@@ -49,19 +55,34 @@ const Footer = () => {
               Follow Us
             </h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-blue-500 text-2xl hover:text-white transition transform hover:scale-110">
+              <a
+                href="https://www.facebook.com/share/p/1EUJERQCPa/?mibextid=oFDknk"
+                className="text-blue-500 text-2xl hover:text-white transition transform hover:scale-110"
+              >
                 <FaFacebook />
               </a>
-              <a href="#" className="text-pink-500 text-2xl hover:text-white transition transform hover:scale-110">
+              <a
+                href="https://www.instagram.com/fitnessexpoindia?igsh=MTZ4YmxsOWd0YXJ3MQ=="
+                className="text-pink-500 text-2xl hover:text-white transition transform hover:scale-110"
+              >
                 <FaInstagram />
               </a>
-              <a href="#" className="text-blue-400 text-2xl hover:text-white transition transform hover:scale-110">
+              <a
+                href="#"
+                className="text-blue-400 text-2xl hover:text-white transition transform hover:scale-110"
+              >
                 <FaTwitter />
               </a>
-              <a href="#" className="text-red-500 text-2xl hover:text-white transition transform hover:scale-110">
+              <a
+                href="#"
+                className="text-red-500 text-2xl hover:text-white transition transform hover:scale-110"
+              >
                 <FaYoutube />
               </a>
-              <a href="#" className="text-yellow-500 text-2xl hover:text-white transition transform hover:scale-110">
+              <a
+                href="#"
+                className="text-yellow-500 text-2xl hover:text-white transition transform hover:scale-110"
+              >
                 <FaEnvelope />
               </a>
             </div>

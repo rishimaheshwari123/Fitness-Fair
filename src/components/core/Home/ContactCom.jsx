@@ -16,8 +16,6 @@ const ContactCom = () => {
     priceCategory: "",
     price: "",
     size: "",
-   
-    
   });
 
   const [isClient, setIsClient] = useState(false);
@@ -73,7 +71,6 @@ const ContactCom = () => {
         priceCategory: "",
         price: "",
         size: "",
-      
       });
     } catch (error) {
       Swal.fire({
@@ -157,20 +154,32 @@ const ContactCom = () => {
               onChange={handleChange}
             >
               <option value="">Select Price</option>
-              <option value="Womens fitness Champions Trophy - 1500">Womens fitness Champions Trophy - ₹1500</option>
-              <option value="Womens fitness Award - 1000">Womens fitness Award - ₹1000</option>
+              <option value="Womens fitness Champions Trophy - 1500">
+                Womens fitness Champions Trophy - ₹1500
+              </option>
+              <option value="Zumba Fitness session - ₹200">
+                Zumba Fitness session - ₹200
+              </option>
+              <option value="Yoga sessions - ₹200">Yoga sessions - ₹200</option>
+              <option value="Womens fitness Award - 1000">
+                Womens fitness Award - ₹1000
+              </option>
               <option value="Madhya Pradesh fitness Champions Trophy (mens) - 2000">
                 Madhya Pradesh fitness Champions Trophy (mens) - ₹2000
               </option>
-              <option value="Mens Fitness Award - 1000">Mens Fitness Award - ₹1000</option>
-              <option value="Cycling Competition - 500">Cycling Competition - ₹500</option>
+              <option value="Mens Fitness Award - 1000">
+                Mens Fitness Award - ₹1000
+              </option>
+              <option value="Cycling Competition - 500">
+                Cycling Competition - ₹500
+              </option>
             </select>
 
             {formData.price && (
-            <span className="block mt-2 text-red-600 font-semibold">
-              Price: ₹{formData.price}
-            </span>
-          )}
+              <span className="block mt-2 text-red-600 font-semibold">
+                Price: ₹{formData.price}
+              </span>
+            )}
           </div>
 
           {/* T-Shirt Size */}
@@ -191,8 +200,6 @@ const ContactCom = () => {
             </select>
           </div>
         </div>
-
-        
 
         {/* Submit Button */}
         <button

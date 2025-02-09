@@ -82,10 +82,7 @@ const EventFlow = () => {
                 icon: <GrRestroomWomen size={24} className="text-blue-500" />,
                 text: "Zumba Session",
               },
-              {
-                icon: <IoIosBicycle size={24} className="text-blue-500" />,
-                text: "Cycle Marathon",
-              },
+
               {
                 icon: <FaBuilding size={24} className="text-green-500" />,
                 text: "Guest Visit",

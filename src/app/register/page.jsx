@@ -2,7 +2,13 @@
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { FaUser, FaEnvelope, FaPhone, FaCity, FaRegCalendarAlt, FaBriefcase } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaCity,
+  FaBriefcase,
+} from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,8 +16,8 @@ export default function Contact() {
     email: "",
     phone: "",
     city: "",
-    age: "",
     occupation: "",
+    stallCategory: "", // Additional field for Stall Booking
   });
 
   const handleChange = (e) => {
@@ -27,7 +33,6 @@ export default function Contact() {
     const toastId = toast.loading("Submitting...");
     try {
       const response = await axios.post(
-        // "https://api.fitnessexpo.in/api/v1/contact/create",
         "https://api.fitnessexpo.in/api/v1/contact/create",
         formData
       );
@@ -39,8 +44,8 @@ export default function Contact() {
         email: "",
         phone: "",
         city: "",
-        age: "",
         occupation: "",
+        stallCategory: "",
       });
       toast.success(response?.data?.message);
     } catch (error) {
@@ -50,21 +55,27 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center  contactbg">
-    <br />
-  
-
-      <div className="w-full max-w-md bg-white shadow-lg   rounded-xl p-6 border-t-4 border-red-500">
+    <div className="min-h-screen flex items-center justify-center contactbg">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 border-t-4 border-red-500">
         <h2 className="text-3xl font-bold text-center text-red-600 mb-4">
           Registration Form
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {[{ label: "Name", name: "name", type: "text", icon: <FaUser /> },
-            { label: "Email", name: "email", type: "email", icon: <FaEnvelope /> },
+          {[
+            { label: "Name", name: "name", type: "text", icon: <FaUser /> },
+            {
+              label: "Email",
+              name: "email",
+              type: "email",
+              icon: <FaEnvelope />,
+            },
             { label: "Phone", name: "phone", type: "text", icon: <FaPhone /> },
-            { label: "City", name: "city", type: "text", icon: <FaCity /> }].map(({ label, name, type, icon }) => (
+            { label: "City", name: "city", type: "text", icon: <FaCity /> },
+          ].map(({ label, name, type, icon }) => (
             <div key={name} className="relative">
-              <label className="block text-sm font-medium text-gray-700">{label}</label>
+              <label className="block text-sm font-medium text-gray-700">
+                {label}
+              </label>
               <div className="flex items-center border border-gray-300 rounded-lg px-3 focus-within:border-red-500">
                 {icon}
                 <input
@@ -80,27 +91,6 @@ export default function Contact() {
           ))}
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Age Group</label>
-            <select
-              name="age"
-              value={formData.age}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none"
-            >
-              <option value="">Select Age Group</option>
-              <option value="Below 18">Below 18</option>
-              <option value="18-24">18-24</option>
-              <option value="25-34">25-34</option>
-              <option value="35-44">35-44</option>
-              <option value="45+">45+</option>
-            </select>
-          </div>
-
-         
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Category</label>
             <select
               name="occupation"
               value={formData.occupation}
@@ -114,6 +104,32 @@ export default function Contact() {
               <option value="Stall Booking">Stall Booking</option>
             </select>
           </div>
+
+          {formData.occupation === "Stall Booking" && (
+            <div>
+              <select
+                name="stallCategory"
+                value={formData.stallCategory}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none"
+              >
+                <option value="">Select Stall Category</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Wellness">Wellness</option>
+                <option value="Cosmetic">Cosmetic</option>
+                <option value="Gym">Gym</option>
+                <option value="Supplement">Supplement</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Beauty Product">Beauty Product</option>
+                <option value="Sports Cloths">Sports Cloths</option>
+                <option value="University">University</option>
+                <option value="Schools">Schools</option>
+                <option value="Hospitals">Hospitals</option>
+                <option value="Lifestyles">Lifestyles</option>
+              </select>
+            </div>
+          )}
 
           <button
             type="submit"
