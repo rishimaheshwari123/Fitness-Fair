@@ -6,7 +6,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import logo from "@/assets/logo.png";
 import TopHeader from "./TopBar";
-
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import { SiMaplibre } from "react-icons/si";
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -22,9 +24,8 @@ const Navbar = () => {
 
   return (
     <>
-
       <div className="w-full bg-white text-black shadow-lg fixed top-0 left-0 z-50 h-[120px]">
-      <TopHeader />
+        <TopHeader />
         {/* Desktop Navbar */}
         <Fade direction="down" triggerOnce>
           <div className="hidden sm:flex justify-between max-w-7xl mx-auto items-center px-6 py-">
@@ -76,7 +77,7 @@ const Navbar = () => {
 
         {/* Sidebar for Small Devices */}
         <div
-          className={`fixed top-0 left-0 w-64 h-screen bg-white shadow-lg z-50 transition-transform duration-500 ease-in-out ${
+          className={`fixed top-0 left-0 w-64 h-screen bg-red-500 shadow-lg z-50 transition-transform duration-500 ease-in-out ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -98,6 +99,52 @@ const Navbar = () => {
                 </Link>
               </Fade>
             ))}
+          </div>
+          <div className="flex space-x-4 pl-10">
+            <Link
+              href="https://www.facebook.com/share/p/1EUJERQCPa/?mibextid=oFDknk"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebook
+                size={22}
+                className="text-gray-800 hover:text-gray-300"
+              />
+            </Link>
+            <Link
+              href="https://www.instagram.com/fitnessexpoindia?igsh=MTZ4YmxsOWd0YXJ3MQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram
+                size={22}
+                className="text-gray-800 hover:text-gray-300"
+              />
+            </Link>
+            <Link
+              href="https://www.youtube.com/@rkshomes5376"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <FaYoutube
+                size={22}
+                className="text-gray-800 hover:text-gray-300"
+              />
+            </Link>
+            <Link
+              href="https://www.google.com/maps?q=23.1630267,77.2736317&z=17&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Map"
+            >
+              <SiMaplibre
+                size={22}
+                className="text-gray-800 hover:text-gray-300"
+              />
+            </Link>
           </div>
         </div>
 
