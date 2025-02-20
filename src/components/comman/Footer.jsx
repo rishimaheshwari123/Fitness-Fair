@@ -45,7 +45,7 @@ const Footer = () => {
             <p className="text-gray-400">
               📍 E-4 /44 Arera Colony, Bhopal - 462003
             </p>
-            <p className="text-gray-400">📞 +91 9407487775, +91 9981122493 </p>
+            <p className="text-gray-400">📞 +91 9202909715, +91 9981122493 </p>
             <p className="text-gray-400">📧 fitnessexpoindia@gmail.com</p>
           </div>
 

@@ -34,10 +34,10 @@ const TopHeader = () => {
                 <div className="hidden md:flex items-center space-x-2">
                   <FiPhone className="text-xl text-green-600" />
                   <a
-                    href="tel:918989643314"
+                    href="tel:919202909715"
                     className="font-semibold hover:underline"
                   >
-                    +91 8989643314
+                    +91 9202909715
                   </a>
                 </div>
               </Zoom>
@@ -129,10 +129,10 @@ const TopHeader = () => {
           <div className="flex items-center space-x-2">
             <FiPhone className="text-xl text-green-600" />
             <a
-              href="tel:918989643314"
+              href="tel:919202909715"
               className="font-semibold hover:underline"
             >
-              8989643314
+              9202909715
             </a>
           </div>
           <div className="flex space-x-4">

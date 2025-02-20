@@ -104,7 +104,7 @@ const Contact = () => {
             </span>
             <span>
               {" "}
-             9407487775
+             9202909715
             </span>
           </div>
           <div className="flex items-center gap-4">
